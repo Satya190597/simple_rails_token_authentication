@@ -2,13 +2,13 @@
 Rails Token Based Authentication.
 
 # Routes
-  post '/sign_up', :to => 'users#create' 
-  post '/sign_in', :to => 'authentication#authenticate' 
-  get '/welcome', :to => 'users#welcome' 
-  get '/logout',  :to => 'authentication#logout' 
+  post '/sign_up', :to => 'users#create'_
+  post '/sign_in', :to => 'authentication#authenticate'_
+  get '/welcome', :to => 'users#welcome'_
+  get '/logout',  :to => 'authentication#logout'_
  
  
  # Header Information
  
- Authorization : user_token
- email : user_email
+ Authorization : user_token_
+ email : user_email_
