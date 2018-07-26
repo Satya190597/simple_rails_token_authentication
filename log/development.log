@@ -2359,3 +2359,506 @@ Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 121.0ms)
 
 
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (25.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 13:15:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (71.1ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "QYQ2qwb5JvCnSEHpVqU5Lne6"], ["updated_at", "2018-07-26 07:45:52.859801"], ["id", 1]]
+  [1m[35m (225.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 07:45:53.161172"], ["tokenhash", "---\n127.0.0.1: QYQ2qwb5JvCnSEHpVqU5Lne6\n"], ["id", 1]]
+  [1m[35m (181.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 689ms (Views: 0.6ms | ActiveRecord: 480.5ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:19:10 +0530
+Processing by UsersController#welcome as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-26 07:49:10.397877"], ["id", 1]]
+  [1m[35m (330.1ms)[0m  [1m[36mcommit transaction[0m
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 349ms (Views: 0.3ms | ActiveRecord: 331.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 13:21:27 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "tMcKggMNez757P64C239mN5k"], ["updated_at", "2018-07-26 07:51:28.151926"], ["id", 1]]
+  [1m[35m (78.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 07:51:28.235517"], ["tokenhash", "---\n127.0.0.1: tMcKggMNez757P64C239mN5k\n"], ["id", 1]]
+  [1m[35m (81.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 363ms (Views: 0.4ms | ActiveRecord: 163.1ms)
+
+
+Started POST "/welcome" for 127.0.0.1 at 2018-07-26 13:22:20 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/welcome"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:22:27 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-26 07:52:27.858747"], ["id", 1]]
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 102ms (Views: 0.3ms | ActiveRecord: 94.5ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:22:59 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:23:01 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 13:23:17 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "3CRb17ERxyCs9v68QxkXiG9U"], ["updated_at", "2018-07-26 07:53:17.892664"], ["id", 1]]
+  [1m[35m (107.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 07:53:18.004140"], ["tokenhash", "---\n127.0.0.1: 3CRb17ERxyCs9v68QxkXiG9U\n"], ["id", 1]]
+  [1m[35m (82.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 341ms (Views: 0.4ms | ActiveRecord: 190.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 13:23:37 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "dHL31LQNoPipqnmETFAFhBFX"], ["updated_at", "2018-07-26 07:53:38.082677"], ["id", 1]]
+  [1m[35m (181.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 07:53:38.271356"], ["tokenhash", "---\n127.0.0.1: dHL31LQNoPipqnmETFAFhBFX\n"], ["id", 1]]
+  [1m[35m (71.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 423ms (Views: 0.3ms | ActiveRecord: 257.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:23:58 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:24:01 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:24:03 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:24:04 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:24:05 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-26 13:24:22 +0530
+Processing by AuthenticationController#logout as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `tokenhash' for nil:NilClass):
+  
+app/controllers/application_controller.rb:11:in `authenticate_request'
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:24:33 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-26 13:25:08 +0530
+Processing by AuthenticationController#logout as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-26 07:55:08.856630"], ["id", 1]]
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 96ms (Views: 0.4ms | ActiveRecord: 88.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-26 13:25:13 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUser (20180726080246)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "users" ADD "address" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "cell" text[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180726080246"]]
+  [1m[35m (111.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+[0m
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:38:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff.in"], ["password_digest", "$2a$10$yMz3bQcQF2LD7bXFFh6kb.My5Ux.CI39dWx11YZAB2TrS56cZvVEe"], ["created_at", "2018-07-26 08:08:53.998819"], ["updated_at", "2018-07-26 08:08:53.998819"], ["token", "R1WhouFVTUpgtvuekfKbJT8P"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:08:54.098811"], ["token", nil], ["id", 3]]
+  [1m[35m (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (77.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+Completed 200 OK in 417ms (Views: 1.5ms | ActiveRecord: 258.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:39:57 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$qqW8jpLbIZHrWciqodFc4OQl6u42cZ4w1X8boGaPHKYhzma0y7NkO"], ["created_at", "2018-07-26 08:09:58.019741"], ["updated_at", "2018-07-26 08:09:58.019741"], ["token", "JDEgeRhya3e95nHJ1UwSHsLE"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (72.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:09:58.095569"], ["token", nil], ["id", 4]]
+  [1m[35m (59.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (65.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+Completed 500 Internal Server Error in 363ms (ActiveRecord: 200.5ms)
+
+
+  
+NoMethodError (undefined method `delete' for nil:NilClass):
+  
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:41:41 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$9K9Pzq5GZXtJaXAaHY7JouC26T3aPBYzQkSivnQCiSJOoV4VHbpC."], ["created_at", "2018-07-26 08:11:41.572369"], ["updated_at", "2018-07-26 08:11:41.572369"], ["token", "V9EHCmHV1hExa14oahqWvugg"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (71.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:11:41.649354"], ["token", nil], ["id", 5]]
+  [1m[35m (72.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 457ms (ActiveRecord: 148.6ms)
+
+
+  
+NameError (undefined local variable or method `name' for #<UsersController:0xaec151c>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:41:58 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$pZ9gZlf/WjmkxJBDib73censHVlezHOomn0HqCrIYexXP4BTX8vnu"], ["created_at", "2018-07-26 08:11:59.214350"], ["updated_at", "2018-07-26 08:11:59.214350"], ["token", "Z2cFCscNtCaRsExDpBNi4FGV"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (82.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:11:59.301429"], ["token", nil], ["id", 6]]
+  [1m[35m (72.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 157.8ms)
+
+
+  
+NoMethodError (undefined method `call' for #<User:0xaaa9ba0>
+Did you mean?  cell):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:42:22 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$pvX6wXEImnhiSNjo6/S8SufEci4eUKYCU6pxR0opVaYmvB.9orouy"], ["created_at", "2018-07-26 08:12:22.232136"], ["updated_at", "2018-07-26 08:12:22.232136"], ["token", "z7pz425xsQERKFACSKqiFuq8"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:12:22.307655"], ["token", nil], ["id", 7]]
+  [1m[35m (73.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 315ms (ActiveRecord: 149.0ms)
+
+
+  
+NoMethodError (undefined method `call' for #<User:0xb1a9d10>
+Did you mean?  cell):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:42:44 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (27.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$/rR4oApHeCujAY0qhGFT/O8nnq/ep.JIz3wO2zomqbUWyfwvD8/P2"], ["created_at", "2018-07-26 08:12:44.678656"], ["updated_at", "2018-07-26 08:12:44.678656"], ["token", "KAN4kqTjHaVCTLqYtDZLwHkg"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (107.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:12:44.820959"], ["token", nil], ["id", 8]]
+  [1m[35m (75.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 212.6ms)
+
+
+  
+NoMethodError (undefined method `call' for #<User:0xa62e7d8>
+Did you mean?  cell):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:44:05 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$KUSglCxH8eTEK.fcooJrtuUEFFT/nP7H645NbVuM8PaMEjxpVQtV."], ["created_at", "2018-07-26 08:14:05.445834"], ["updated_at", "2018-07-26 08:14:05.445834"], ["token", "H9ZMpGGZp7CexsTqphXqaXMR"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (91.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:14:05.541486"], ["token", nil], ["id", 9]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 183.9ms)
+
+
+  
+NoMethodError (private method `select' called for #<User:0xaed2d30>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:49:19 +0530
+  
+NameError (uninitialized constant ApplicationRecord::Base):
+  
+app/models/user.rb:1:in `<top (required)>'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:51:09 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$NX9MR4ks3uMmTymhPaT/eezhDLAhK4mMcd5S3jI4NqJn9R3BP21dK"], ["created_at", "2018-07-26 08:21:10.062468"], ["updated_at", "2018-07-26 08:21:10.062468"], ["token", "K6ZGWnonT3mR2AWoMuKazbRG"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (84.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:21:10.151935"], ["token", nil], ["id", 10]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 172.0ms)
+
+
+  
+NoMethodError (private method `select' called for #<User:0xb18a898>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:53:20 +0530
+  
+SyntaxError (/home/satya/RubyProject/user_api/app/controllers/users_controller.rb:17: syntax error, unexpected '(', expecting '}'
+ated Successfully",data:@user(:select=>"cell"))}
+                              ^
+/home/satya/RubyProject/user_api/app/controllers/users_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+y",data:@user(:select=>"cell"))}
+                              ^):
+  
+app/controllers/users_controller.rb:17: syntax error, unexpected '(', expecting '}'
+app/controllers/users_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:53:38 +0530
+  
+SyntaxError (/home/satya/RubyProject/user_api/app/controllers/users_controller.rb:17: syntax error, unexpected '(', expecting '}'
+ated Successfully",data:@user(:select=>"cell")}
+                              ^
+/home/satya/RubyProject/user_api/app/controllers/users_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+y",data:@user(:select=>"cell")}
+                              ^):
+  
+app/controllers/users_controller.rb:17: syntax error, unexpected '(', expecting '}'
+app/controllers/users_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 13:55:26 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$WESKcR1A6o0lr/1wGCq3i.EnQcKOFL64PbgoUbvN6SQ7C56Dj.4yG"], ["created_at", "2018-07-26 08:25:27.081526"], ["updated_at", "2018-07-26 08:25:27.081526"], ["token", "cN8sVksYvjQRSjPMsW7TwXZx"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (116.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:25:27.201451"], ["token", nil], ["id", 11]]
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 359ms (Views: 0.9ms | ActiveRecord: 203.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 14:08:38 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "authentication"=>{"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "f2UCvuraikGJkexnp2Ak95TG"], ["updated_at", "2018-07-26 08:38:38.310868"], ["id", 5]]
+  [1m[35m (82.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:38:38.427212"], ["tokenhash", "---\n127.0.0.1: f2UCvuraikGJkexnp2Ak95TG\n"], ["id", 5]]
+  [1m[35m (104.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 532ms (Views: 0.5ms | ActiveRecord: 188.1ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 14:12:06 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$aZvrO5l4cGc8Ys5NmV11YemAW5qM0amBh8QRmGtvlxN6UGnGmIe5W"], ["created_at", "2018-07-26 08:42:07.158235"], ["updated_at", "2018-07-26 08:42:07.158235"], ["token", "BhvbyNeCXh8VSU9wsQqofG9m"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (87.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:42:07.250147"], ["token", nil], ["id", 12]]
+  [1m[35m (79.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 341ms (ActiveRecord: 169.8ms)
+
+
+  
+NoMethodError (undefined method `except' for #<User:0xaa104a0>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 14:13:00 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$vjenIkRI0S.myGdF6YDu0u/6p9kuSuqs76QjKxI9aDgU7ewQ7MqiC"], ["created_at", "2018-07-26 08:43:00.770706"], ["updated_at", "2018-07-26 08:43:00.770706"], ["token", "ZB1h5zinMaXoxAF1sBpf3EbK"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (96.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:43:00.873207"], ["token", nil], ["id", 13]]
+  [1m[35m (95.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 369ms (ActiveRecord: 194.6ms)
+
+
+  
+NoMethodError (undefined method `except' for #<User:0xab25340>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 14:16:59 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$QCc.rnK6XgdHW9RsW34lqOxJyUQFZxO7daab72iZKGEzFn5yzaoWe"], ["created_at", "2018-07-26 08:46:59.728217"], ["updated_at", "2018-07-26 08:46:59.728217"], ["token", "sGvfScLBUrvEWjwGfHhfWijJ"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (102.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:46:59.854237"], ["token", nil], ["id", 14]]
+  [1m[35m (83.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 381ms (ActiveRecord: 208.7ms)
+
+
+  
+NoMethodError (undefined method `fetch' for #<User:0xabf0af4>):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 14:18:45 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$6aGUJog/qr0RxTVu0yN1YeOEOBkHTXhExDPTRB.ar4R/QypqjOP3W"], ["created_at", "2018-07-26 08:48:46.111438"], ["updated_at", "2018-07-26 08:48:46.111438"], ["token", "Vbz7iV5g572i92AyKoZQjeCD"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:48:46.200078"], ["token", nil], ["id", 15]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 344ms (ActiveRecord: 171.1ms)
+
+
+  
+NoMethodError (undefined method `fetch' for #<User:0xac2a31c>):
+  
+app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 14:23:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "token", "address", "cell") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nandy@rediff1.in"], ["password_digest", "$2a$10$tvxCSNAgnlFih1SwBt.7ReqKgEupxBrotSCCmhuX7/m/2dlGHUruO"], ["created_at", "2018-07-26 08:53:54.605387"], ["updated_at", "2018-07-26 08:53:54.605387"], ["token", "mkWfgkNxAMbvP4HsvSfvUJTH"], ["address", "jamshedpur"], ["cell", "9955373305"]]
+  [1m[35m (97.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:53:54.709886"], ["token", nil], ["id", 16]]
+  [1m[35m (80.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 345ms (Views: 0.4ms | ActiveRecord: 181.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-26 14:24:20 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305", "authentication"=>{"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "cell"=>"9955373305"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "PmYAhzUStqmWibGBWBoLpbXe"], ["updated_at", "2018-07-26 08:54:20.586722"], ["id", 5]]
+  [1m[35m (92.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-26 08:54:20.686677"], ["tokenhash", "---\n127.0.0.1: PmYAhzUStqmWibGBWBoLpbXe\n"], ["id", 5]]
+  [1m[35m (91.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 339ms (Views: 0.4ms | ActiveRecord: 186.3ms)
+
+
