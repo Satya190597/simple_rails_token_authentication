@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.token = nil
       @user.save
-      render json: {success:true,message:"User Created Successfully",email:@user.email,username:@user.username,address:@user.address,cell:@cell}
+      render json: {success:true,message:"User Created Successfully",email:@user.email,username:@user.username,address:@user.address,mobile:@cell}
     else
       render json: {success:false,message:"Unable To Create User"}
     end
@@ -22,8 +22,7 @@ class UsersController < ApplicationController
 
   # user parameters for new user
   private
-  def users_params
-    params.permit(:email,:username,:address,:cell,:password,:password_confirmation)
-  end
-
+    def users_params
+      params.permit(:email,:username,:address,:mobile,:password,:password_confirmation)
+    end
 end
