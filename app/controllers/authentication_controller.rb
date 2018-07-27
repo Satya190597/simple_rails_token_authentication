@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user.authenticate(params[:password])
       addClient
-      render json: {success:true,email:@user.email,username:@user.username,address:@user.address,cell:@cell,token:@user.tokenhash[request.remote_ip]}
+      render json: {success:true,email:@user.email,username:@user.username,address:@user.address,mobile:@user.mobile,token:@user.tokenhash[request.remote_ip]}
     else
       render json: {success:false,message:"Invalid User Id Or Password"}
     end

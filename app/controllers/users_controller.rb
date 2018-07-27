@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.token = nil
       @user.save
-      render json: {success:true,message:"User Created Successfully",email:@user.email,username:@user.username,address:@user.address,mobile:@cell}
+      render json: {success:true,message:"User Created Successfully",email:@user.email,username:@user.username,address:@user.address,mobile:@user.mobile}
     else
       render json: {success:false,message:"Unable To Create User"}
     end

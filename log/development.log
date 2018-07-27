@@ -3100,3 +3100,33 @@ Unpermitted parameter: user
 Completed 200 OK in 470ms (Views: 0.3ms | ActiveRecord: 284.3ms)
 
 
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 17:44:52 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff2.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "mobile"=>"9955373305", "user"=>{"email"=>"nandy@rediff2.in", "address"=>"jamshedpur", "mobile"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff2.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 160ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 17:44:54 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff2.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "mobile"=>"9955373305", "user"=>{"email"=>"nandy@rediff2.in", "address"=>"jamshedpur", "mobile"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff2.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 177ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-26 17:45:01 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"nandy@rediff1.in", "password"=>"[FILTERED]", "address"=>"jamshedpur", "mobile"=>"9955373305", "user"=>{"email"=>"nandy@rediff1.in", "address"=>"jamshedpur", "mobile"=>"9955373305"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 146ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
