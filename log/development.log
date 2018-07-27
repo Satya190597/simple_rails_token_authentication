@@ -3130,3 +3130,653 @@ Unpermitted parameter: user
 Completed 200 OK in 146ms (Views: 0.2ms | ActiveRecord: 0.4ms)
 
 
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail1"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail.com.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@gmail.com.in"], ["LIMIT", 1]]
+  [1m[35mSQL (27.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "token", "address", "mobile") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "satya prakash"], ["email", "nandy@gmail.com.in"], ["password_digest", "$2a$10$fM7ckp7iknpYlM8y.DYCDO1PQpb6/BJug83z0ILYpqrZ5577Q8CRG"], ["created_at", "2018-07-27 13:08:12.457683"], ["updated_at", "2018-07-27 13:08:12.457683"], ["token", "iPcaBup9Xn8sKZCLwioeaQgo"], ["address", "Golmuri"], ["mobile", "9955373305"]]
+  [1m[35m (112.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCreatedByToUser (20180727131549)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "created_by" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727131549"]]
+  [1m[35m (419.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_tokenhash' AND type='index'
+[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35mSQL (117.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35mSQL (100.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@rediff1.in"], ["LIMIT", 1]]
+  [1m[35mSQL (106.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ?[0m  [["email", "nandy@rediff.in"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ?[0m  [["email", "nandy@rediff1.in"]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (22.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (131.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[35m (103.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[35m (109.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  [1m[35m (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (110.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  [1m[35m (187.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  [1m[35m (171.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 15]]
+  [1m[35m (107.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 16]]
+  [1m[35m (98.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:07:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.9ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "oiZWXe35WG8phoj4VsZL93q5"], ["updated_at", "2018-07-27 13:37:57.032449"], ["id", 1]]
+  [1m[35m (80.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 13:37:57.123919"], ["tokenhash", "---\n127.0.0.1: oiZWXe35WG8phoj4VsZL93q5\n"], ["id", 1]]
+  [1m[35m (70.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 435ms (Views: 0.7ms | ActiveRecord: 158.5ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-07-27 19:08:23 +0530
+Processing by UsersController#welcome as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/add_user" for 127.0.0.1 at 2018-07-27 19:10:13 +0530
+Processing by UsersController#add_user as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "mobile"=>"9955373305", "address"=>"BBSR", "username"=>"Aslam Malik", "user"=>{"username"=>"Aslam Malik", "email"=>"nandy@yahoo.in", "address"=>"BBSR", "mobile"=>"9955373305"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 218ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/add_user" for 127.0.0.1 at 2018-07-27 19:10:30 +0530
+Processing by UsersController#add_user as */*
+  Parameters: {"email"=>"aslam@yahoo.in", "mobile"=>"9955373305", "address"=>"BBSR", "username"=>"Aslam Malik", "user"=>{"username"=>"Aslam Malik", "email"=>"aslam@yahoo.in", "address"=>"BBSR", "mobile"=>"9955373305"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "token", "address", "mobile", "created_by") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Aslam Malik"], ["email", "aslam@yahoo.in"], ["password_digest", "$2a$10$3WrOW1bgyAr3gQaOofTPO.D.v2g2pwM79zRQHvYS2Qr0vjGPOXkPG"], ["created_at", "2018-07-27 13:40:30.362573"], ["updated_at", "2018-07-27 13:40:30.362573"], ["token", "WjFJzaa4B3Rg89DfAwJFMf2k"], ["address", "BBSR"], ["mobile", "9955373305"], ["created_by", 1]]
+  [1m[35m (142.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 13:40:30.512108"], ["token", nil], ["id", 19]]
+  [1m[35m (81.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 392ms (Views: 0.3ms | ActiveRecord: 227.0ms)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+Started POST "/get_users" for 127.0.0.1 at 2018-07-27 19:19:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/get_users"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/get_users" for 127.0.0.1 at 2018-07-27 19:19:56 +0530
+  
+AbstractController::ActionNotFound (The action 'get_users' could not be found for UsersController):
+  
+actionpack (5.0.7) lib/abstract_controller/base.rb:121:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/get_users" for 127.0.0.1 at 2018-07-27 19:20:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/get_users"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:20:36 +0530
+  
+AbstractController::ActionNotFound (The action 'all_users' could not be found for UsersController):
+  
+actionpack (5.0.7) lib/abstract_controller/base.rb:121:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:20:52 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:21:40 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 1]]
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/add_users" for 127.0.0.1 at 2018-07-27 19:22:39 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/add_users"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/add_user" for 127.0.0.1 at 2018-07-27 19:22:47 +0530
+Processing by UsersController#add_user as */*
+  Parameters: {"email"=>"rosan@yahoo.in", "mobile"=>"7979884785", "address"=>"PURI", "username"=>"Rosan Kumar", "user"=>{"username"=>"Rosan Kumar", "email"=>"rosan@yahoo.in", "address"=>"PURI", "mobile"=>"7979884785"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rosan@yahoo.in"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "token", "address", "mobile", "created_by") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Rosan Kumar"], ["email", "rosan@yahoo.in"], ["password_digest", "$2a$10$YT.8JpSnDlQv6P0PwpgI3u7EWh0iMvyPf4BYHMmDtl03hKeEi4gGa"], ["created_at", "2018-07-27 13:52:48.152798"], ["updated_at", "2018-07-27 13:52:48.152798"], ["token", "8QeVdXxLR1Sg5qzj2uyFj9cb"], ["address", "PURI"], ["mobile", "7979884785"], ["created_by", 1]]
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "rosan@yahoo.in"], ["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 13:52:48.281001"], ["token", nil], ["id", 20]]
+  [1m[35m (136.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 437ms (Views: 0.2ms | ActiveRecord: 260.8ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:23:03 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 1]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:24:33 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 1]]
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-27 19:24:43 +0530
+Processing by AuthenticationController#logout as */*
+  Parameters: {"authentication"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-27 13:54:43.681480"], ["id", 1]]
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 143ms (Views: 0.4ms | ActiveRecord: 127.8ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:24:51 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:25:58 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 165ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:26:13 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "AD6nJEuAihCfBNPQzPwom6fA"], ["updated_at", "2018-07-27 13:56:13.757614"], ["id", 19]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 13:56:13.864017"], ["tokenhash", "---\n127.0.0.1: AD6nJEuAihCfBNPQzPwom6fA\n"], ["id", 19]]
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 338ms (Views: 0.4ms | ActiveRecord: 178.3ms)
+
+
+Started POST "/all_users" for 127.0.0.1 at 2018-07-27 19:26:44 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/all_users"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:26:54 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:27:12 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "5NhndPUCABDZJ1QAtsDcqdqv"], ["updated_at", "2018-07-27 13:57:12.678711"], ["id", 19]]
+  [1m[35m (99.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 13:57:12.789414"], ["tokenhash", "---\n127.0.0.1: 5NhndPUCABDZJ1QAtsDcqdqv\n"], ["id", 19]]
+  [1m[35m (91.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 356ms (Views: 0.5ms | ActiveRecord: 195.0ms)
+
+
+Started GET "/user_all" for 127.0.0.1 at 2018-07-27 19:27:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/user_all"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:27:56 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:29:14 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:29:15 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:30:02 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:30:17 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-27 19:30:29 +0530
+Processing by AuthenticationController#logout as */*
+  Parameters: {"authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-27 14:00:29.689790"], ["id", 19]]
+  [1m[35m (83.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 103ms (Views: 0.4ms | ActiveRecord: 86.5ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:30:51 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+Completed 200 OK in 165ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:31:03 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nandy@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "oqZJjgfpYEqZ1RKMtSFjgzps"], ["updated_at", "2018-07-27 14:01:03.609576"], ["id", 1]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 14:01:03.725319"], ["tokenhash", "---\n127.0.0.1: oqZJjgfpYEqZ1RKMtSFjgzps\n"], ["id", 1]]
+  [1m[35m (108.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 379ms (Views: 0.4ms | ActiveRecord: 212.8ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:31:40 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 1]]
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-27 19:31:50 +0530
+Processing by AuthenticationController#logout as */*
+  Parameters: {"authentication"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "nandy@yahoo.in"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.9ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-27 14:01:50.197863"], ["id", 1]]
+  [1m[35m (118.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 122.6ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:32:26 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aslam@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "6ihZb3WSRHFWw2THd4jRQuuj"], ["updated_at", "2018-07-27 14:02:26.200045"], ["id", 19]]
+  [1m[35m (97.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 14:02:26.306270"], ["tokenhash", "---\n127.0.0.1: 6ihZb3WSRHFWw2THd4jRQuuj\n"], ["id", 19]]
+  [1m[35m (88.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 355ms (Views: 0.3ms | ActiveRecord: 188.5ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:33:01 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 19]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-07-27 19:36:00 +0530
+Processing by AuthenticationController#logout as */*
+  Parameters: {"authentication"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "aslam@yahoo.in"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "tokenhash" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokenhash", nil], ["updated_at", "2018-07-27 14:06:00.560651"], ["id", 19]]
+  [1m[35m (172.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 223ms (Views: 0.4ms | ActiveRecord: 176.3ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2018-07-27 19:38:21 +0530
+Processing by UsersController#create as */*
+  Parameters: {"email"=>"razan@yahoo.in", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "mobile"=>"797884782", "address"=>"Jharkhand", "username"=>"Razan Kumar", "user"=>{"username"=>"Razan Kumar", "email"=>"razan@yahoo.in", "address"=>"Jharkhand", "mobile"=>"797884782"}}
+Unpermitted parameter: user
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "token", "address", "mobile") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Razan Kumar"], ["email", "razan@yahoo.in"], ["password_digest", "$2a$10$wK3Hqjum2P7bCzYNfjNFle2V5t5RjgfCT3GRQ0mJGzPwcTx7RL7Di"], ["created_at", "2018-07-27 14:08:21.258398"], ["updated_at", "2018-07-27 14:08:21.258398"], ["token", "TGsA6nmEJkMfvRBXppChvmWn"], ["address", "Jharkhand"], ["mobile", "797884782"]]
+  [1m[35m (95.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "razan@yahoo.in"], ["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 14:08:21.361078"], ["token", nil], ["id", 21]]
+  [1m[35m (91.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 350ms (Views: 0.5ms | ActiveRecord: 190.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2018-07-27 19:40:50 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"razan@yahoo.in", "password"=>"[FILTERED]", "authentication"=>{"email"=>"razan@yahoo.in", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "razan@yahoo.in"], ["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "6HFg8LvAMzV51nk89jx2uVQE"], ["updated_at", "2018-07-27 14:10:50.915872"], ["id", 21]]
+  [1m[35m (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "razan@yahoo.in"], ["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "tokenhash" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 14:10:51.033525"], ["tokenhash", "---\n127.0.0.1: 6HFg8LvAMzV51nk89jx2uVQE\n"], ["id", 21]]
+  [1m[35m (76.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 374ms (Views: 0.6ms | ActiveRecord: 192.2ms)
+
+
+Started POST "/add_user" for 127.0.0.1 at 2018-07-27 19:42:34 +0530
+Processing by UsersController#add_user as */*
+  Parameters: {"email"=>"simran@yahoo.in", "username"=>"Simran Bidhar", "mobile"=>"99884577", "address"=>"Jatni", "user"=>{"username"=>"Simran Bidhar", "email"=>"simran@yahoo.in", "address"=>"Jatni", "mobile"=>"99884577"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "simran@yahoo.in"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "token", "address", "mobile", "created_by") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Simran Bidhar"], ["email", "simran@yahoo.in"], ["password_digest", "$2a$10$Ad7IGJI/kgKTw7ANrwmv/egsfnRfEJQC60BdDCK2UWQZ3jaOigni."], ["created_at", "2018-07-27 14:12:34.290804"], ["updated_at", "2018-07-27 14:12:34.290804"], ["token", "fGxkjUSRk3qawJjPF3kTRDVx"], ["address", "Jatni"], ["mobile", "99884577"], ["created_by", 21]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "simran@yahoo.in"], ["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "token" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-07-27 14:12:34.400358"], ["token", nil], ["id", 22]]
+  [1m[35m (78.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 338ms (Views: 1.8ms | ActiveRecord: 181.4ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:42:50 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 21]]
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:49:26 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users"."username" FROM "users" WHERE "users"."id" = ?[0m  [["id", 21]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.9ms)
+
+
+  
+Arel::Visitors::UnsupportedVisitError (Unsupported argument type: Hash. Construct an Arel node instead.):
+  
+app/controllers/users_controller.rb:38:in `all_users'
+Started GET "/all_users" for 127.0.0.1 at 2018-07-27 19:49:58 +0530
+Processing by UsersController#all_users as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "razan@yahoo.in"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users"."id", "users"."email", "users"."username", "users"."mobile", "users"."address" FROM "users" WHERE "users"."created_by" = ?[0m  [["created_by", 21]]
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 1.9ms)
+
+

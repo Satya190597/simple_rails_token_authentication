@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726114425) do
+ActiveRecord::Schema.define(version: 20180727131549) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180726114425) do
     t.string   "tokenhash"
     t.text     "address"
     t.text     "mobile"
+    t.integer  "created_by"
     t.index ["tokenhash"], name: "index_users_on_tokenhash", unique: true
   end
 
